@@ -3,12 +3,17 @@ module ApplicationLoader
 
   def load_app!
     require_app
+    init_app
   end
 
   private
 
   def require_app
     require_file 'config/application'
+  end
+
+  def init_app
+    require_dir 'config/initializers'
   end
 
   def require_file(path)
