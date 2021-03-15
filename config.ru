@@ -1,5 +1,5 @@
 require_relative 'config/environment'
 
 map '/ads' do
-  run Application
+  run AdRoutes
 end
