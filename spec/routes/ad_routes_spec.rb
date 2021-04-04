@@ -17,7 +17,9 @@ RSpec.describe AdRoutes, type: :routes do
   describe 'POST /v1' do
     let(:user_id) { 101 }
     let(:auth_token) { 'auth.token' }
+    let(:coordinates) { [45.05,90.05] }
     let(:auth_service) { instance_double('Auth service') }
+    let(:geocoder_service) { instance_double('Geocoder service') }
 
     before do
       allow(auth_service).to receive(:auth)
@@ -27,6 +29,11 @@ RSpec.describe AdRoutes, type: :routes do
         .and_return(auth_service)
 
       header 'Authorization', "Bearer #{auth_token}"
+
+      allow(geocoder_service).to receive(:coordinates)
+        .and_return(coordinates)
+      allow(GeocoderService::Client).to receive(:new)
+        .and_return(geocoder_service)
     end
 
     context 'missing parameters' do
@@ -68,7 +75,9 @@ RSpec.describe AdRoutes, type: :routes do
         {
           title: 'Ad title',
           description: 'Ad description',
-          city: 'City'
+          city: 'City',
+          lat: 45.05,
+          lon: 90.05
         }
       end
 
@@ -85,7 +94,9 @@ RSpec.describe AdRoutes, type: :routes do
         {
           title: 'Ad title',
           description: 'Ad description',
-          city: 'City'
+          city: 'City',
+          lat: 45.05,
+          lon: 90.05
         }
       end
 

@@ -8,7 +8,9 @@ RSpec.describe Ads::CreateService do
       {
         title: 'Ad title',
         description: 'Ad description',
-        city: 'City'
+        city: 'City',
+        lat: 45.05,
+        lon: 90.05
       }
     end
 
@@ -29,7 +31,9 @@ RSpec.describe Ads::CreateService do
       {
         title: 'Ad title',
         description: 'Ad description',
-        city: ''
+        city: '',
+        lat: '',
+        lon: ''
       }
     end
 
