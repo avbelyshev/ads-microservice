@@ -5,3 +5,8 @@ db:
   password: postgres
 pagination:
   page_size: 10
+service:
+  auth:
+    url: http://localhost:3010/v1
+  geocoder:
+    url: http://localhost:3020/geocoder
