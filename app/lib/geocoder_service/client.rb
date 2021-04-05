@@ -6,7 +6,7 @@ module GeocoderService
     extend Dry::Initializer[undefined: false]
     include Api
 
-    option :url, default: proc { 'Settings.service.geocoder.url' }
+    option :url, default: proc { Settings.service.geocoder.url }
     option :connection, default: proc { build_connection }
 
     private

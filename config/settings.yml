@@ -10,3 +10,5 @@ service:
     url: http://localhost:3010/v1
   geocoder:
     url: http://localhost:3020/geocoder
+rabbitmq:
+  consumer_pool: 10
