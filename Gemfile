@@ -12,18 +12,25 @@ gem 'sinatra', '~> 2.0.8', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 2.0.8'
 gem 'faraday', '~> 1.0.1'
 gem 'faraday_middleware', '~> 1.0.0'
+gem 'rack-ougai', '~> 0.2.1'
+gem 'rack-request-id', '~> 0.0.4'
 
 gem 'i18n', '~> 1.8.2'
 gem 'config', '~> 2.2.1'
 
 gem 'pg', '~> 1.2.3'
 gem 'sequel', '~> 5.32.0'
+gem 'bunny', '~> 2.15.0'
 
 gem 'dry-initializer', '~> 3.0.3'
 gem 'dry-validation', '~> 1.5.0'
 
 gem 'activesupport', '~> 6.0.0', require: false
 gem 'fast_jsonapi', '~> 1.5'
+
+group :development do
+  gem 'amazing_print'
+end
 
 group :test do
   gem 'rspec', '~> 3.9.0'
