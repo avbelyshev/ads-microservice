@@ -1,6 +1,6 @@
 db:
   database: ads_microservice_production
-  url: <%= ENV.fetch('DATABASE_URL') %>
+  url: <%= ENV.fetch('ADS_DATABASE_URL') %>
 rabbit_mq:
   host: <%= ENV.fetch('RABBITMQ_HOST') %>
   username: <%= ENV.fetch('RABBITMQ_USER') %>
