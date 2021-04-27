@@ -5,6 +5,7 @@ db:
   host: localhost
   user: postgres
   password: postgres
+  url: <%= ENV['ADS_DATABASE_URL'] %>
 pagination:
   page_size: 10
 service:
@@ -13,6 +14,9 @@ service:
   geocoder:
     url: http://localhost:3020/geocoder
 rabbitmq:
+  host: <%= ENV['RABBITMQ_HOST']%>
+  user: <%= ENV['RABBITMQ_USER']%>
+  password: <%= ENV['RABBITMQ_PASSWORD']%>
   consumer_pool: 10
 logger:
   path: log/app.log
